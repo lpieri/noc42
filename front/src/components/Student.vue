@@ -6,8 +6,9 @@
       <div id="tileStudentProfile" class="tile is-4">
         <div class="container">
           <div id="infoStudent" class="columns">
-            <figure id="pictureStudent" class="image is-128x128 column">
-              <img :src="studentPicture" alt="student-picture" class="is-rounded">
+            <figure class="image is-128x128 column">
+              <div id="pictureStudent" :style="{ 'background-image': 'url(' + studentPicture + ')' }"></div>
+              <!--<img :src="studentPicture" alt="student-picture" class="is-rounded">-->
             </figure>
             <h2 id="nameStudent" class="title is-4 column">{{ studentName }}</h2>
           </div>
@@ -16,7 +17,7 @@
 
       <div id="agendaEvent" class="tile is-8">
         <div class="container">
-          <full-calendar :config="config" :events="events" :plugin="plugins"/>
+          <full-calendar :config="config" :events="events"/>
         </div>
       </div>
 
@@ -35,10 +36,9 @@ export default {
     return {
       studentName: 'Laura Boit',
       studentPicture: 'https://cdn.intra.42.fr/users/small_lboit.jpg',
-      plugins: [ dayGridPlugin ],
       events: [],
       config: {
-        defaultView: 'month',
+        defaultView: 'basicWeek',
         locale: 'fr',
         firstDay: 1
       }
@@ -57,11 +57,14 @@ export default {
   flex-flow: column;
 }
 #pictureStudent {
-  width: 100%;
+  background: center no-repeat;
+  border-radius: 50%;
+  height: 128px;
+  width: 128px;
 }
 #nameStudent {
   width: 100%;
-  margin-top: 50px;
+  margin-top: 21px;
 }
 #tileStudentProfile {
   padding: 21px;
