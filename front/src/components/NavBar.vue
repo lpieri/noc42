@@ -1,6 +1,6 @@
 <template>
-  <div class="section">
-	<nav id="NavBar" class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
+  <!--<div class="section">-->
+	<nav id="NavBar" class="navbar is-transparent" role="navigation" aria-label="main navigation">
 		<div class="navbar-brand">
 
 			<a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
@@ -16,7 +16,7 @@
 			</a>
     </div>
 	</nav>
-  </div>
+  <!--</div>-->
 </template>
 
 <script>
