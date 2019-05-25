@@ -1,5 +1,6 @@
 <template>
-	<nav id="NavBar" class="navbar" role="navigation" aria-label="main navigation">
+  <div class="section">
+	<nav id="NavBar" class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
 		<div class="navbar-brand">
 
 			<a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
@@ -11,14 +12,11 @@
 
 		<div id="NavBarContent" class="navbar-menu">
 			<a class="navbar-item">
-				Home
+        <router-link to="/">Home</router-link>
 			</a>
-
-			<a class="navbar-item">
-				Documentation
-			</a>
-		</div>
+    </div>
 	</nav>
+  </div>
 </template>
 
 <script>
