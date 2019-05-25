@@ -5,7 +5,7 @@
       <div id="buttonConnect" class="columns">
         <div class="column">
           <a class="button is-large is-outlined">
-            <router-link to="/agenda">Un Student</router-link>
+            <router-link to="/student">Un Student</router-link>
           </a>
         </div>
         <div class="column">

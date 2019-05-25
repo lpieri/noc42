@@ -3,9 +3,19 @@
 const webpack = require ('webpack')
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const cspHtmlWebpackPlugin = require("csp-html-webpack-plugin");
 
 const HOST = 'localhost'
 const PORT = 8080
+
+const cspConfigPolicy = {
+    'default-src': "'self'",
+    'base-uri': "'self'",
+    'object-src': "'self'",
+    'script-src': ["'self'"],
+	'style-src': ["'self'"],
+	'img-src': ["'self'"]
+};
 
 module.exports = {
   mode: 'development',
@@ -52,6 +62,7 @@ module.exports = {
   },
   plugins: [
 	new webpack.HotModuleReplacementPlugin(),
+	new cspHtmlWebpackPlugin(cspConfigPolicy),
 	new VueLoaderPlugin(),
 	new HtmlWebpackPlugin({
 		filname: 'index.html',

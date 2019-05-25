@@ -2,6 +2,7 @@ import Vue from 'vue';
 import Router from 'vue-router';
 import Connect from './components/Connect.vue';
 import Agenda from './components/Agenda.vue';
+import Student from './components/Student.vue';
 
 Vue.use(Router);
 
@@ -18,6 +19,11 @@ export default new Router({
       path: '/agenda',
       name: 'agenda',
       component: Agenda
+    },
+    {
+      path: '/student',
+      name: 'student',
+      component: Student
     }
   ],
 });
