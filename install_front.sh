@@ -42,6 +42,7 @@ else
 	echo "\033[31mVue-js is not installed !!\033[0m";
 	echo "\033[33mVue-js installation starts...\033[0m";
 	npm install -g vue-cli > /dev/null;
+	npm install -g @vue/cli > /de/null;
 	echo "\033[032mVue-js is good installed and updated !!\033[0m";
 fi
 echo "\033[38;5;206m---------------------------\033[0m";
@@ -53,4 +54,5 @@ echo "\033[38;5;206m---------------------------\033[0m";
 echo "\033[33mInstall dep...\033[0m";
 npm install --save vue-router vue-loader vue-template-compilateur vue-style-loader > /dev/null;
 npm install --save-dev webpack webpack-cli webpack-dev-server html-webpack-plugin > /dev/null;
+npm install --save-dev image-webpack-loader file-loader > /dev/null;
 npm install --save-dev bulma css-loader extract-text-webpack-plugin@next node-sass sass-loader style-loader > /dev/null;
