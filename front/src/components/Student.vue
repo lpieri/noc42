@@ -3,7 +3,7 @@
 
     <div class="tile is-ancestor">
 
-      <div id="tileStudentProfile" class="tile is-4">
+      <div id="tileStudentProfile" class="tile is-4 card">
         <div class="container">
           <div id="infoStudent" class="columns">
             <figure class="image is-128x128 column">
@@ -27,9 +27,6 @@
 </template>
 
 <script>
-// import moment from 'moment'
-import dayGridPlugin from '@fullcalendar/daygrid'
-
 export default {
   name: 'Student',
   data() {
@@ -49,7 +46,6 @@ export default {
 
 <style>
 #agendaEvent {
-  /*background: aquamarine;*/
   padding: 21px;
 }
 #infoStudent {
@@ -70,6 +66,6 @@ export default {
   padding: 21px;
   flex-flow: column;
   justify-content: center;
-  background: pink;
+  border-radius: 2%;
 }
 </style>
