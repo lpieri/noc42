@@ -9,7 +9,9 @@
           </a>
         </div>
         <div class="column">
-          <a class="button is-large is-outlined">Une Asso</a>
+          <a class="button is-large is-outlined">
+            <router-link to="/asso">Une Asso</router-link>
+          </a>
         </div>
         <div class="column">
           <a class="button is-large is-outlined">Un Habitant du Quartier</a>
