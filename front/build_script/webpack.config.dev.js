@@ -1,4 +1,6 @@
 'use strict'
+
+const webpack = require ('webpack')
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
@@ -12,7 +14,10 @@ module.exports = {
   ],
   devServer: {
     clientLogLevel: 'warning',
-    hot: true,
+	hot: true,
+	watchOptions: {
+		poll: true
+	},
     contentBase: 'dist',
     compress: true,
     host: HOST,
@@ -37,6 +42,7 @@ module.exports = {
     ]
   },
   plugins: [
+	new webpack.HotModuleReplacementPlugin(),
 	new VueLoaderPlugin(),
 	new HtmlWebpackPlugin({
 		filname: 'index.html',
