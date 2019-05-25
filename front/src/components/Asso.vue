@@ -1,5 +1,9 @@
 <template>
   <div class="section">
-    <h1 class="title is-1">Je suis une asso :)</h1>
+    <div class="container card">
+      <figure class="image is-128x128">
+        <img src="../assets/passerelles17.png" alt="passerelles17" class="is-rounded">
+      </figure>
+    </div>
   </div>
 </template>
