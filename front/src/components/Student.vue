@@ -6,10 +6,10 @@
       <div id="tileStudentProfile" class="tile is-4">
         <div class="container">
           <div id="infoStudent" class="columns">
-            <figure id="pictureStudent" class="image is-96x96 column">
-              <img src="https://bulma.io/images/placeholders/128x128.png" alt="profile-picture" class="is-rounded">
+            <figure id="pictureStudent" class="image is-128x128 column">
+              <img :src="studentPicture" alt="student-picture" class="is-rounded">
             </figure>
-            <h2 id="nameStudent" class="title is-4 column">Louise Pieri</h2>
+            <h2 id="nameStudent" class="title is-4 column">{{ studentName }}</h2>
           </div>
         </div>
       </div>
@@ -33,6 +33,8 @@ export default {
   name: 'Student',
   data() {
     return {
+      studentName: 'Laura Boit',
+      studentPicture: 'https://cdn.intra.42.fr/users/small_lboit.jpg',
       plugins: [ dayGridPlugin ],
       events: [],
       config: {
