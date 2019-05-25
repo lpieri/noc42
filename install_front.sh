@@ -53,3 +53,4 @@ echo "\033[38;5;206m---------------------------\033[0m";
 echo "\033[33mInstall dep...\033[0m";
 npm install --save vue-router bulma > /dev/null;
 npm install --save-dev webpack webpack-cli bulma css-loader extract-text-webpack-plugin@next node-sass sass-loader style-loader > /dev/null;
+npm install --save-dev vue-loader vue-template-compilateur vue-style-loader > /dev/null;
