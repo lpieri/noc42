@@ -4,6 +4,7 @@ const webpack = require ('webpack');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const path = require('path');
 
 const HOST = 'localhost'
 const PORT = 8080
@@ -23,8 +24,8 @@ module.exports = {
     compress: true,
     host: HOST,
     port: PORT,
-    overlay: { warnings: false, errors: true },
-	publicPath: 'assets',
+	overlay: { warnings: false, errors: true },
+	publicPath: '/',
     quiet: true
   },
   module: {
@@ -32,6 +33,10 @@ module.exports = {
 		{
 			test: /\.vue$/,
 			loader: 'vue-loader'
+		},
+		{
+			test: /\.(png|jpg|gif)$/,
+			loader: 'file-loader'
 		},
 		{
 			test: /\.scss$/,
@@ -54,15 +59,6 @@ module.exports = {
 				'vue-style-loader',
 				'css-loader'
 			]
-		},
-		{
-			test: /\.(png|jpg|gif)$/,
-			use: [
-				{
-				loader: 'file-loader',
-				options: {},
-				},
-			],
 		},
     ]
   },
