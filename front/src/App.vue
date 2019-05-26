@@ -17,6 +17,9 @@ export default {
 </script>
 
 <style>
+.label {
+  text-align: left;
+}
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

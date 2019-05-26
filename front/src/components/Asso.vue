@@ -15,9 +15,9 @@
 
       <div class="tile is-3 card">
         <div id="assoDes" class="columns">
-          <h4 class="title is-5 column">Description :</h4>
+          <h4 class="title is-5 column">DESCRIPTION :</h4>
           <p id="assoDescrip" class="is-medium column">{{ assoDescription }}</p>
-          <button id="addAssoEvent" @click="launch" class="button column">
+          <button id="addAssoEvent" @click="launch" class="button is-warning column">
             Proposer une mission
           </button>
         </div>
@@ -36,7 +36,7 @@
       <div class="modal-background"></div>
       <div class="modal-card">
         <header class="modal-card-head">
-          <p class="modal-card-title">Proposer une mission :</p>
+          <p class="modal-card-title">PROPOSER UNE MISSION :</p>
           <button @click="close" class="delete" aria-label="close"></button>
         </header>
         <section class="modal-card-body">
@@ -78,7 +78,7 @@
           </form>
         </section>
         <footer class="modal-card-foot">
-          <button class="button is-success" @click.prevent="submit">Créer</button>
+          <button class="button is-warning" @click.prevent="submit">Créer</button>
           <button class="button" @click="close">Annuler</button>
         </footer>
       </div>

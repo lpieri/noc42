@@ -4,18 +4,18 @@
       <h1 id="titleConnect" class="title">Qui suis-je ?</h1>
       <div id="buttonConnect" class="columns">
         <div class="column">
-          <a class="button is-large is-outlined">
-            <router-link to="/student">Un Student</router-link>
+          <a class="button is-large is-warning">
+            <router-link to="/student">UN STUDENT</router-link>
           </a>
         </div>
         <div class="column">
-          <a class="button is-large is-outlined">
-            <router-link to="/asso">Une Asso</router-link>
+          <a class="button is-large is-warning">
+            <router-link to="/asso">UNE ASSOCIATION</router-link>
           </a>
         </div>
         <div class="column">
-          <a class="button is-large is-outlined">
-            <router-link to="/habitant">Un Habitant du Quartier</router-link>
+          <a class="button is-large is-warning">
+            <router-link to="/habitant">UN HABITANT DU QUARTIER</router-link>
           </a>
         </div>
       </div>

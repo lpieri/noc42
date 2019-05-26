@@ -22,13 +22,13 @@
           <div class="container">
             <div class="columns">
               <div id="studentStat" class="column">
-                <h5 class="title is-5">Mes Stats :</h5>
+                <h5 class="title is-5">MES STATS :</h5>
                 <p class="subtitle is-5">Nombre de missions effectuées dans le mois : <h6 class="title is-6">{{ nbMission }}</h6></p>
                 <p class="subtitle is-5">Nombre d'heures effectuées dans le mois : <h6 class="title is-6">{{ nbHour }}</h6></p>
                 <p class="subtitle is-5">Centre d'intérêt préféré : <h6 class="title is-6">{{ bestCat }}</h6></p>
               </div>
               <div id="studentSuggest" class="column">
-                <h5 class="title is-5">Suggestions :</h5>
+                <h5 class="title is-5">SUGGESTIONS :</h5>
                 <p class="subtitle is-5">Association qui pourrait vous intéresser : <h6 class="title is-6">{{ suggestAsso }}</h6></p>
                 <p class="subtitle is-5">Mission à venir dans le thème {{ bestCat }} : <h6 class="title is-6">{{ nextDate }}</h6></p>
               </div>
@@ -45,7 +45,7 @@
 
     </div>
     <div class="container">
-      <h1 class="title">Ma Prochaine Mission :</h1>
+      <h1 class="title">MA PROCHAINE MISSION :</h1>
       <p id="titleNextMission" v-if="studentNextMissionTitle != null" class="subtitle is-3">{{ studentNextMissionTitle }}  organisé par {{ modalEventAsso }}</p>
       <p id="titleNextMission" v-if="studentNextMissionDate != null" class="subtitle is-3">Le : {{ studentNextMissionDate }}</p>
       <p id="descriptionNextMission" class="subtitle is-4">{{ studentNextMissionDes }}</p>
@@ -63,7 +63,7 @@
           <p ref="desMission" class="subtile is-4">{{ modalEventDes }}</p>
         </section>
         <footer class="modal-card-foot">
-          <button class="button is-success" @click="suscribe">S'inscrire</button>
+          <button class="button is-warning" @click="suscribe">S'inscrire</button>
           <button class="button" @click="close">Annuler</button>
         </footer>
       </div>
@@ -152,9 +152,11 @@ export default {
 }
 #studentStat p {
   margin-top: 10px;
+  text-align: left;
 }
 #studentSuggest p {
   margin-top: 10px;
+  text-align: left;
 }
 #tileStudentProfile {
   flex-flow: column;
