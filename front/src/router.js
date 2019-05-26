@@ -4,6 +4,7 @@ import Connect from './components/Connect.vue';
 import Agenda from './components/Agenda.vue';
 import Student from './components/Student.vue';
 import Asso from './components/Asso.vue';
+import Habitant from './components/Habitant.vue';
 
 Vue.use(Router);
 
@@ -30,6 +31,11 @@ export default new Router({
       path: '/asso',
       name: 'asso',
       component: Asso
+    },
+    {
+      path: '/habitant',
+      name: 'habitant',
+      component: Habitant
     }
   ],
 });
