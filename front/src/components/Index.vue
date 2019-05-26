@@ -1,8 +1,14 @@
 <template>
   <section class="section">
-    <figure class="image">
-      <img src="logo_rnoc" alt="logo_rnoc">
-    </figure>
-    <router-link class="button is-warning">Connection</router-link>
+    <router-link to="/connect">
+      <img id="logo" src="https://raw.githubusercontent.com/noc42/rnoc42/master/front/src/assets/rnoc_logo.png" alt="logo_rnoc">
+    </router-link>
   </section>
 </template>
+
+<style>
+#logo {
+  width: 80vh;
+  height: 60vh;
+}
+</style>
