@@ -5,6 +5,7 @@ import Agenda from './components/Agenda.vue';
 import Student from './components/Student.vue';
 import Asso from './components/Asso.vue';
 import Habitant from './components/Habitant.vue';
+import Index from './components/index.vue'
 
 Vue.use(Router);
 
@@ -14,6 +15,11 @@ export default new Router({
   routes: [
     {
       path: '/',
+      name: 'index',
+      component: Index
+    },
+    {
+      path: '/connect',
       name: 'connect',
       component: Connect
     },
