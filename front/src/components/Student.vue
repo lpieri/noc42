@@ -65,11 +65,13 @@ export default {
       nextDate: '7 Juin 2019 de 18h à 22h',
       suggestAsso: 'Passerel17',
       studentNextMission: "Je n'ai pas de prochaine mission...",
-      events: [],
+      events: this.$allEvents,
       config: {
-        defaultView: 'basicWeek',
+        defaultView: 'agendaWeek',
         locale: 'fr',
-        firstDay: 1
+        firstDay: 1,
+        slotDuration: "01:00",
+        allDaySlot: false
       }
     }
   }
