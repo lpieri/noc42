@@ -5,7 +5,7 @@
     <div class="container">
       <div id="bandAsso" class="columns card">
         <figure id="picAssoFig" class="column image">
-          <div id="pictureAsso" :alt="assoName"></div>
+          <div id="pictureAsso" :style="{'background-image': 'url('+assoPicturePath+')'}" :alt="assoName"></div>
         </figure>
         <h1 id="assoName" class="column title is-1">{{ assoName }}</h1>
       </div>
@@ -18,7 +18,7 @@
           <h4 class="title is-5 column">Description :</h4>
           <p id="assoDescrip" class="is-medium column">{{ assoDescription }}</p>
           <button id="addAssoEvent" @click="launch" class="button column">
-            Ajouter un Event
+            Proposer une mission
           </button>
         </div>
       </div>
@@ -36,34 +36,41 @@
       <div class="modal-background"></div>
       <div class="modal-card">
         <header class="modal-card-head">
-          <p class="modal-card-title">Ajouté un Evenement :</p>
+          <p class="modal-card-title">Proposer une mission :</p>
           <button @click="close" class="delete" aria-label="close"></button>
         </header>
         <section class="modal-card-body">
           <form id="addEvent" action="submit">
             <div class="field">
-              <label class="label">Nom de l'event :</label>
+              <label class="label">Nom de la mission :</label>
               <div class="control">
-                <input ref="titleEvent" class="input" type="text" placeholder="Event...">
+                <input ref="titleEvent" class="input" type="text" placeholder="Mission...">
               </div>
             </div>
 
             <div class="field">
-              <label class="label">Description de l'event :</label>
+              <label class="label">Description de la mission :</label>
               <div class="control">
                 <input ref="desEvent" class="input" type="text" placeholder="Description...">
               </div>
             </div>
 
             <div class="field">
-              <label class="label">À quel heure l'event commence ?</label>
+              <label class="label">Nombre de bénévoles :</label>
+              <div class="control">
+                <input ref="nbUserEvent" class="input" type="number" placeholder="Nombre...">
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="label">Heure de début :</label>
               <div class="control">
                 <input ref="startEvent" class="input" type="datetime-local" placeholder="">
               </div>
             </div>
 
             <div class="field">
-              <label class="label">À quel heure l'event fini ?</label>
+              <label class="label">Heure de fin :</label>
               <div class="control">
                 <input ref="endEvent" class="input" type="datetime-local" placeholder="">
               </div>
@@ -71,8 +78,8 @@
           </form>
         </section>
         <footer class="modal-card-foot">
-          <button class="button is-success" @click.prevent="submit">Save changes</button>
-          <button class="button" @click="close">Cancel</button>
+          <button class="button is-success" @click.prevent="submit">Créer</button>
+          <button class="button" @click="close">Annuler</button>
         </footer>
       </div>
     </div>
@@ -87,11 +94,9 @@ export default {
   component: Modal,
   data () {
     return {
-      assoName: 'Ressourcerie des Batignolles',
-      assoPicturePath: './src/assets/passerelles17.png',
-      assoDescription: 'La Ressourcerie des Batignolles est une association actrice du réemploi.\n' +
-          'Tous les objets que nous recevons, soit par la collecte au domicile des particuliers,' +
-        'soit par apport volontaire sur notre site, suivent une série d’étapes avant d’arriver dans la boutique solidaire.',
+      assoName: 'Passerelles 17',
+      assoPicturePath: 'https://raw.githubusercontent.com/cpieri/site/born2hack/front/src/assets/passerelles17.png',
+      assoDescription: "Passerelles 17 est une association locale et entreprise d’insertion qui agit pour améliorer le cadre de vie du quartier. Fresques participatives, jardins partagés, végétalisation de l’espace public, cabane à livres, … Nous développons de nombreux projets conviviaux avec et pour les habitants pour embellir le quartier et favoriser les rencontres.",
       events: this.$allEvents,
       config: {
         defaultView: 'agendaWeek',
@@ -119,12 +124,14 @@ export default {
     submit() {
       let titleE = this.$refs.titleEvent.value;
       let desE = this.$refs.desEvent.value;
+      let nbE = this.$refs.nbUserEvent.value;
       let startE = this.$refs.startEvent.value;
       let endE = this.$refs.endEvent.value;
       let dataE = {
         asso: this.assoName,
         title: titleE,
         description: desE,
+        nb: nbE,
         start: startE,
         end: endE
       };
@@ -154,7 +161,7 @@ export default {
 #pictureAsso {
   width: 150px;
   height: 150px;
-  background: pink no-repeat center;
+  background: no-repeat center;
   border-radius: 50%;
 }
 #assoName {

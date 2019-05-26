@@ -17,20 +17,20 @@
         <div class="column">
           <div id="profileNoc" class="container">
             <h4 class="title is-4"><abbr title="Not Only Coin">NOC</abbr> : {{ nbNoc }}</h4>
-            <router-link to="/">Utilisé mes <abbr title="Not Only Coin">NOC</abbr></router-link>
+            <router-link to="/">Utiliser mes <abbr title="Not Only Coin">NOC</abbr></router-link>
           </div>
           <div class="container">
             <div class="columns">
               <div id="studentStat" class="column">
                 <h5 class="title is-5">Mes Stats :</h5>
-                <p class="subtitle is-5">Nombre de missions éffectué dans le mois : <h6 class="title is-6">{{ nbMission }}</h6></p>
-                <p class="subtitle is-5">Nombre d'heures éffectué dans le mois : <h6 class="title is-6">{{ nbHour }}</h6></p>
-                <p class="subtitle is-5">Mon centre d'intérêt préferé : <h6 class="title is-6">{{ bestCat }}</h6></p>
+                <p class="subtitle is-5">Nombre de missions effectuées dans le mois : <h6 class="title is-6">{{ nbMission }}</h6></p>
+                <p class="subtitle is-5">Nombre d'heures effectuées dans le mois : <h6 class="title is-6">{{ nbHour }}</h6></p>
+                <p class="subtitle is-5">Centre d'intérêt préféré : <h6 class="title is-6">{{ bestCat }}</h6></p>
               </div>
               <div id="studentSuggest" class="column">
-                <h5 class="title is-5">Mes Suggestion :</h5>
-                <p class="subtitle is-5">Association qui pourrait vous intéressé.e : <h6 class="title is-6">{{ suggestAsso }}</h6></p>
-                <p class="subtitle is-5">Une futur mission dans {{ bestCat }} : <h6 class="title is-6">{{ nextDate }}</h6></p>
+                <h5 class="title is-5">Suggestions :</h5>
+                <p class="subtitle is-5">Association qui pourrait vous intéresser : <h6 class="title is-6">{{ suggestAsso }}</h6></p>
+                <p class="subtitle is-5">Mission à venir dans le thème {{ bestCat }} : <h6 class="title is-6">{{ nextDate }}</h6></p>
               </div>
             </div>
           </div>
@@ -46,7 +46,7 @@
     </div>
     <div class="container">
       <h1 class="title">Ma Prochaine Mission :</h1>
-      <p id="titleNextMission" class="subtitle is-3">{{ studentNextMissionTitle }}: {{ studentNextMissionDate }}</p>
+      <p id="titleNextMission" class="subtitle is-3">{{ studentNextMissionTitle }} {{ studentNextMissionDate }}</p>
       <p id="descriptionNextMission" class="subtitle is-4">{{ studentNextMissionDes }}</p>
     </div>
 
@@ -62,8 +62,8 @@
           <p ref="desMission" class="subtile is-4">{{ modalEventDes }}</p>
         </section>
         <footer class="modal-card-foot">
-          <button class="button is-success" @click="suscribe">Suscribe</button>
-          <button class="button" @click="close">Cancel</button>
+          <button class="button is-success" @click="suscribe">S'inscrire</button>
+          <button class="button" @click="close">Annuler</button>
         </footer>
       </div>
     </div>
@@ -80,12 +80,12 @@ export default {
       nbNoc: 42,
       nbMission: 1,
       nbHour: 2,
-      bestCat: "La mécanique",
+      bestCat: "Mécanique",
       nextDate: '14 Juillet 2019 de 18h à 22h',
-      suggestAsso: 'Recyclerie',
+      suggestAsso: 'Recyclerie Sportive',
       studentNextMissionTitle: "",
       studentNextMissionDate: "",
-      studentNextMissionDes: "Je n'ai pas de prochaine mission...",
+      studentNextMissionDes: "Je n'ai pas de mission prévue",
       events: this.$allEvents,
       modalEventTitle: null,
       modalEventDes: null,
