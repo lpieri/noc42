@@ -111,7 +111,12 @@ export default {
   },
   methods: {
     eClick(callEvent, jsEvent, view) {
-      console.log(callEvent.title);
+      this.showModal = true;
+    	this.$refs.titleEvent.value = callEvent.title;
+    	this.$refs.desEvent.value = callEvent.description;
+      this.$refs.nbUserEvent.value = callEvent.nb;
+      this.$refs.startEvent.value = callEvent.start;
+    	this.$refs.endEvent.value = callEvent.end;
       jsEvent = null;
       view = null;
     },
