@@ -19,6 +19,11 @@
           </a>
         </div>
       </div>
+	  <div class="column">
+          <a class="button is-large is-warning">
+            <router-link to="https://youtu.be/PurM7HSuNG8">VIDEO</router-link>
+          </a>
+        </div>
     </div>
   </section>
 </template>
