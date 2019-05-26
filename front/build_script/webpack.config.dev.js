@@ -3,7 +3,6 @@
 const webpack = require ('webpack');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const HOST = 'localhost'
@@ -25,7 +24,7 @@ module.exports = {
     host: HOST,
     port: PORT,
     overlay: { warnings: false, errors: true },
-	publicPath: '/',
+	publicPath: 'assets',
     quiet: true
   },
   module: {
@@ -45,7 +44,6 @@ module.exports = {
 					loader: 'sass-loader',
 					options: {
 						sourceMap: true,
-						// options...
 					}
 				}
 			]
