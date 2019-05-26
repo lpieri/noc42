@@ -82,8 +82,6 @@
 <script>
 import Modal from './modal.vue';
 
-function
-
 export default {
   name: 'AssoProfile',
   component: Modal,
@@ -100,12 +98,18 @@ export default {
         locale: 'fr',
         firstDay: 1,
         slotDuration: "01:00",
-        allDaySlot: false
+        allDaySlot: false,
+        eventClick: this.eClick
       },
       showModal: false
     }
   },
   methods: {
+    eClick(callEvent, jsEvent, view) {
+      console.log(callEvent.title);
+      jsEvent = null;
+      view = null;
+    },
     launch() {
       this.showModal = true;
     },
@@ -122,8 +126,7 @@ export default {
         title: titleE,
         description: desE,
         start: startE,
-        end: endE,
-        // eventClick:
+        end: endE
       };
       this.$allEvents.push(dataE);
       this.showModal = false;

@@ -46,7 +46,26 @@
     </div>
     <div class="container">
       <h1 class="title">Ma Prochaine Mission :</h1>
-      <p id="descriptionNextMission" class="subtitle is-4">{{ studentNextMission }}</p>
+      <p id="titleNextMission" class="subtitle is-3">{{ studentNextMissionTitle }}: {{ studentNextMissionDate }}</p>
+      <p id="descriptionNextMission" class="subtitle is-4">{{ studentNextMissionDes }}</p>
+    </div>
+
+    <div class="modal" :class="{'is-active':showModal}">
+      <div class="modal-background"></div>
+      <div class="modal-card">
+        <header class="modal-card-head">
+          <p class="modal-card-title">{{ modalEventTitle }}</p>
+          <button class="delete" aria-label="close" @click="close"></button>
+        </header>
+        <section class="modal-card-body">
+          <p ref="desMission" class="subtile is-4">{{ modalEventDate }}</p>
+          <p ref="desMission" class="subtile is-4">{{ modalEventDes }}</p>
+        </section>
+        <footer class="modal-card-foot">
+          <button class="button is-success" @click="suscribe">Suscribe</button>
+          <button class="button" @click="close">Cancel</button>
+        </footer>
+      </div>
     </div>
   </section>
 </template>
@@ -64,15 +83,41 @@ export default {
       bestCat: "l'Éducation",
       nextDate: '7 Juin 2019 de 18h à 22h',
       suggestAsso: 'Passerel17',
-      studentNextMission: "Je n'ai pas de prochaine mission...",
+      studentNextMissionTitle: "",
+      studentNextMissionDate: "",
+      studentNextMissionDes: "Je n'ai pas de prochaine mission...",
       events: this.$allEvents,
+      modalEventTitle: null,
+      modalEventDes: null,
+      modalEventDate: null,
+      showModal: false,
       config: {
         defaultView: 'agendaWeek',
         locale: 'fr',
         firstDay: 1,
         slotDuration: "01:00",
-        allDaySlot: false
+        allDaySlot: false,
+        eventClick: this.eClick
       }
+    }
+  },
+  methods: {
+    eClick(allEvent, jsEvent, view) {
+      this.modalEventTitle = allEvent.title;
+      this.modalEventDes = allEvent.description;
+      this.modalEventDate = allEvent.start;
+      this.showModal = true;
+      jsEvent = null;
+      view = null;
+    },
+    close() {
+      this.showModal = false;
+    },
+    suscribe() {
+      this.studentNextMissionTitle = this.modalEventTitle;
+      this.studentNextMissionDate = this.modalEventDate;
+      this.studentNextMissionDes = this.modalEventDes;
+      this.showModal = false;
     }
   }
 }
@@ -81,6 +126,7 @@ export default {
 <style>
 #agendaEvent {
   padding: 21px;
+  border-radius: 0% 10px 10px 0%;
 }
 #infoStudent {
   /*justify-content: center;*/
@@ -110,6 +156,8 @@ export default {
 #tileStudentProfile {
   flex-flow: column;
   justify-content: center;
+  border-radius: 10px 0% 0% 10px;
+
 }
 #globalStudent {
   max-height: 150px;
